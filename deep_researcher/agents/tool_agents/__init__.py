@@ -7,14 +7,17 @@ class ToolAgentOutput(BaseModel):
 
 from .search_agent import init_search_agent
 from .crawl_agent import init_crawl_agent
+from .azure_search_agent import init_azure_search_agent
 from ...llm_config import LLMConfig
 from ..baseclass import ResearchAgent
 
 def init_tool_agents(config: LLMConfig) -> dict[str, ResearchAgent]:
     search_agent = init_search_agent(config)
     crawl_agent = init_crawl_agent(config)
+    azure_search_agent = init_azure_search_agent(config)
 
     return {
         "WebSearchAgent": search_agent,
         "SiteCrawlerAgent": crawl_agent,
+        "AzureSearchAgent": azure_search_agent,
     }

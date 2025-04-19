@@ -7,3 +7,4 @@ lxml
 pydantic
 openai-agents==0.0.7
 md2pdf
+requests>=2.31.0
